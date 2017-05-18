@@ -1,0 +1,28 @@
+{
+  "name": "react-star-wars-crawl",
+  "version": "1.0.0",
+  "description": "A composable component that recreates the Star Wars opening crawl",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdubrock/react-star-wars-crawl.git"
+  },
+  "keywords": [
+    "react",
+    "star",
+    "wars",
+    "crawl"
+  ],
+  "author": "Russ DuBrock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdubrock/react-star-wars-crawl/issues"
+  },
+  "homepage": "https://github.com/rdubrock/react-star-wars-crawl#readme",
+  "dependencies": {
+    "react": "^15.5.4"
+  }
+}
