@@ -2,9 +2,10 @@
   "name": "react-star-wars-crawl",
   "version": "1.0.0",
   "description": "A composable component that recreates the Star Wars opening crawl",
-  "main": "index.js",
+  "main": "./lib/StarWarsCrawl.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,14 @@
   "homepage": "https://github.com/rdubrock/react-star-wars-crawl#readme",
   "dependencies": {
     "react": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1"
   }
 }

@@ -1,1 +1,2 @@
-export default from './Crawl'
+import Crawl from './Crawl'
+export default Crawl
