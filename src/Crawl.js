@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './index.css'
 
 const styles = {
@@ -75,5 +76,27 @@ class Crawl extends Component {
     )
   }
 } 
+
+Crawl.PropTypes = {
+  /**
+   * Any nodes in addition to provided text
+   */
+  children: PropTypes.node,
+  /**
+   * Override the inline-styles of the various elements.
+   */
+  containerStyles: PropTypes.object,
+  containerStyles: PropTypes.object,
+  textContainerStyles: PropTypes.object,
+  crawlStyles: PropTypes.object,
+  titleStyles: PropTypes.object,
+  subTitleStyles: PropTypes.object,
+  /*
+   * Texts
+   */
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  text: PropTypes.string
+};
 
 export default Crawl
