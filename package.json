@@ -6,11 +6,13 @@
   "jsnext:main": "./es/index.js",
   "scripts": {
     "test": "test",
-    "build": "npm run build:lib && npm run build:es && npm run build:umd && npm run build:umd:min",
+    "build": "npm run build:lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:lib": "babel src --out-dir lib",
+    "build:lib": "babel src --out-dir lib && cp ./src/index.css ./lib/index.css",
     "build:umd": "cross-env NODE_ENV=development webpack src/index.js dist/react-star-wars-crawl.js",
-    "build:umd:min": "cross-env NODE_ENV=production webpack src/index.js dist/react-star-wars-crawl.min.js"
+    "build:umd:min": "cross-env NODE_ENV=production webpack src/index.js dist/react-star-wars-crawl.min.js",
+    "clean": "rimraf dist lib",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -36,10 +38,22 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-no-commonjs": "0.0.2",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.1",
+    "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1"
-  }
+  },
+  "npmName": "react-star-wars-crawl",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
 }

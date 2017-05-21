@@ -16,7 +16,7 @@ const styles = {
     backgroundImage: 'linear-gradient(0deg, transparent, black 75%)',
     zIndex: 1,
   },
-  starWars: {
+  textContainer: {
     display: 'flex',
     justifyContent: 'center',
     position: 'relative',
@@ -48,26 +48,32 @@ const styles = {
 
 
 
-const Crawl = ({
-  children,
-  containerStyles,
-  title,
-  subTitle,
-  text
-}) => (
-  <div style={styles.container}>
-    <div style={styles.fade}></div>
-    <section style={styles.starWars}>
-      <div style={styles.crawl}>
-        <div style={styles.title}>
-          <p>{title}</p>
-          <h1 style={styles.subTitle}>{subTitle}</h1>
-        </div>
-        <p>{text}</p>
-        {children}
+class Crawl extends Component {
+  render() {
+    const {
+      children,
+      containerStyles,
+      title,
+      subTitle,
+      text
+    } = this.props
+
+    return (
+      <div style={styles.container}>
+        <div style={styles.fade}></div>
+        <section style={styles.textContainer}>
+          <div style={styles.crawl}>
+            <div style={styles.title}>
+              <p>{title}</p>
+              <h1 style={styles.subTitle}>{subTitle}</h1>
+            </div>
+            <p>{text}</p>
+            {children}
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-)
+    )
+  }
+} 
 
 export default Crawl

@@ -3,10 +3,8 @@ const path = require('path')
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: 'ReactStarWarsCrawl',
-    libraryTarget: 'umd'
-//    path: path.resolve(__dirname, 'lib'),
-//    filename: 'StarWarsCrawl.js'
+    path: path.join(__dirname, 'lib'),
+    filename: 'index.js'
   },
   module: {
     loaders: [
