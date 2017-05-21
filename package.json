@@ -7,10 +7,7 @@
   "scripts": {
     "test": "test",
     "build": "npm run build:lib",
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:lib": "babel src --out-dir lib && cp ./src/index.css ./lib/index.css",
-    "build:umd": "cross-env NODE_ENV=development webpack src/index.js dist/react-star-wars-crawl.js",
-    "build:umd:min": "cross-env NODE_ENV=production webpack src/index.js dist/react-star-wars-crawl.min.js",
     "clean": "rimraf dist lib",
     "prepublish": "npm run clean && npm run build"
   },
