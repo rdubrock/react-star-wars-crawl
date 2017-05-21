@@ -50,25 +50,39 @@ const styles = {
 
 
 class Crawl extends Component {
+  mergeStyles(defaultStyle, userStyle) {
+    if(!userStyle) {
+      return defaultStyle
+    } 
+
+    return Object.assign(defaultStyles, userStyle)
+  }
+
   render() {
     const {
       children,
       containerStyles,
+      fadeStyles,
+      textContainerStyles,
+      crawlStyles,
+      titleStyles,
+      subTitleStyles,
+      textStyles,
       title,
       subTitle,
       text
     } = this.props
 
     return (
-      <div style={styles.container}>
-        <div style={styles.fade}></div>
-        <section style={styles.textContainer}>
-          <div style={styles.crawl}>
-            <div style={styles.title}>
+      <div style={mergeStyles(styles.container, containerStyles)}>
+        <div style={mergeStyles(styles.fade, fadeStyles)}></div>
+        <section style={mergeStyles(styles.textContainer, textContainerStyles)}>
+          <div style={mergeStyle(styles.crawl, crawlStyles)}>
+            <div style={mergeStyles(styles.title, titleStyles)}>
               <p>{title}</p>
-              <h1 style={styles.subTitle}>{subTitle}</h1>
+              <h1 style={mergeStyles(styles.subTitle, subTitleStyles)}>{subTitle}</h1>
             </div>
-            <p>{text}</p>
+            <p style={textStyles}>{text}</p>
             {children}
           </div>
         </section>
@@ -91,6 +105,7 @@ Crawl.PropTypes = {
   crawlStyles: PropTypes.object,
   titleStyles: PropTypes.object,
   subTitleStyles: PropTypes.object,
+  textStyles: PropTypes.object,
   /*
    * Texts
    */
