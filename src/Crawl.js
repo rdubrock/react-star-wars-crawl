@@ -55,7 +55,7 @@ class Crawl extends Component {
       return defaultStyle
     } 
 
-    return Object.assign(defaultStyles, userStyle)
+    return Object.assign(defaultStyle, userStyle)
   }
 
   render() {
@@ -74,13 +74,13 @@ class Crawl extends Component {
     } = this.props
 
     return (
-      <div style={mergeStyles(styles.container, containerStyles)}>
-        <div style={mergeStyles(styles.fade, fadeStyles)}></div>
-        <section style={mergeStyles(styles.textContainer, textContainerStyles)}>
-          <div style={mergeStyle(styles.crawl, crawlStyles)}>
-            <div style={mergeStyles(styles.title, titleStyles)}>
+      <div style={this.mergeStyles(styles.container, containerStyles)}>
+        <div style={this.mergeStyles(styles.fade, fadeStyles)}></div>
+        <section style={this.mergeStyles(styles.textContainer, textContainerStyles)}>
+          <div style={this.mergeStyles(styles.crawl, crawlStyles)}>
+            <div style={this.mergeStyles(styles.title, titleStyles)}>
               <p>{title}</p>
-              <h1 style={mergeStyles(styles.subTitle, subTitleStyles)}>{subTitle}</h1>
+              <h1 style={this.mergeStyles(styles.subTitle, subTitleStyles)}>{subTitle}</h1>
             </div>
             <p style={textStyles}>{text}</p>
             {children}
@@ -99,7 +99,6 @@ Crawl.PropTypes = {
   /**
    * Override the inline-styles of the various elements.
    */
-  containerStyles: PropTypes.object,
   containerStyles: PropTypes.object,
   textContainerStyles: PropTypes.object,
   crawlStyles: PropTypes.object,
