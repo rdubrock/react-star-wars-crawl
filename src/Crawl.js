@@ -74,15 +74,15 @@ class Crawl extends Component {
     } = this.props
 
     return (
-      <div style={this.mergeStyles(styles.container, containerStyles)}>
+      <div className='crawler' style={this.mergeStyles(styles.container, containerStyles)}>
         <div style={this.mergeStyles(styles.fade, fadeStyles)}></div>
         <section style={this.mergeStyles(styles.textContainer, textContainerStyles)}>
           <div style={this.mergeStyles(styles.crawl, crawlStyles)}>
             <div style={this.mergeStyles(styles.title, titleStyles)}>
-              <p>{title}</p>
-              <h1 style={this.mergeStyles(styles.subTitle, subTitleStyles)}>{subTitle}</h1>
+              <p className='title'>{title}</p>
+              <h1 className='subTitle' style={this.mergeStyles(styles.subTitle, subTitleStyles)}>{subTitle}</h1>
             </div>
-            <p style={textStyles}>{text}</p>
+            <p className='text' style={textStyles}>{text}</p>
             {children}
           </div>
         </section>
