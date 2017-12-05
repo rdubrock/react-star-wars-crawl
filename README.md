@@ -15,6 +15,9 @@ Simply import the Crawl component. You can use the `title`, `subTitle`, and `tex
     import React from 'react'
     import Crawl from 'react-star-wars-crawl'
 
+    // Import the necessary styles, or include them another way with your build process
+    import 'react-star-wars-crawl/lib/index.css'
+
     const MyCrawlComponent = () => (
         <Crawl
           title="Episode IV"
