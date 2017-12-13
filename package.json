@@ -1,6 +1,6 @@
 {
   "name": "react-star-wars-crawl",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A composable component that recreates the Star Wars opening crawl",
   "main": "./lib/index.js",
   "jsnext:main": "./es/index.js",
