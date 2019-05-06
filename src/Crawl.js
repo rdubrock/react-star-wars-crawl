@@ -90,7 +90,7 @@ class Crawl extends Component {
   }
 } 
 
-Crawl.PropTypes = {
+Crawl.propTypes = {
   /**
    * Any nodes in addition to provided text
    */
